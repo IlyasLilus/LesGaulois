@@ -1,4 +1,4 @@
-package personnages;
+package histoire;
 
 public class Histoire {
 	public static void main(String[] args) {
@@ -22,8 +22,4 @@ public class Histoire {
 		asterix.frapper(minus);
 		minus.parler("J'abandonne...");
 	}
-		
-		
-	
-
 }
