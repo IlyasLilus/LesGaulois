@@ -47,8 +47,10 @@ public class Romain {
 		cesar.recevoirCoup(10);
 		cesar.recevoirCoup(10);
 		System.out.println(cesar.getForce());
+		System.out.println(Equipement.BOUCLIER);
+		System.out.println(Equipement.CASQUE);
+	
 	}
-
 	
 }
 
