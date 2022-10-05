@@ -15,11 +15,8 @@ public class Histoire {
 		asterix.parler("Merci Druide, je sens que ma force est 6 fois décuplée.");
 		asterix.parler("Bonjour");
 		minus.parler("UN GAU... UN GAUGAU...");
-		asterix.frapper(minus);
-		minus.parler("Aïe");
-		asterix.frapper(minus);
-		minus.parler("Aïe");
-		asterix.frapper(minus);
-		minus.parler("J'abandonne...");
+		for (int i = 0; i <3; i++) {
+			asterix.frapper(minus);
+		}
 	}
 }
