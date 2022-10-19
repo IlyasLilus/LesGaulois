@@ -13,5 +13,4 @@ public class Musee {
 		trophees[nbTrophee]=trophee;
 		nbTrophee++;
 	}
-	
 }
