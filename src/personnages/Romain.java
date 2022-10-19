@@ -1,5 +1,7 @@
 package personnages;
 
+import objets.Equipement;
+
 public class Romain {
 	private String nom;
 	private int force;
@@ -106,7 +108,7 @@ public class Romain {
 		if (nbEquipement != 0) {
 			texte += "\nMais heureusement, grace � mon �quipement sa force est diminu� de ";
 			for (int i = 0; i < nbEquipement;i++) {
-				if ((equipements[i] != null && equipements[i].equals(Equipement.BOUCLIER)) == true) {
+				if ((equipements[i] != null && equipements[i].equals(Equipement.BOUCLIER))) {
 					resistanceEquipement += 8;
 				} else {
 					System.out.println("Equipement casque");
@@ -117,17 +119,19 @@ public class Romain {
 		}
 		parler(texte);
 		forceCoup -= resistanceEquipement;
+		if (forceCoup <= 0) {
+			return 0;
+		}
 		return forceCoup;
 		}
 		private Equipement[] ejecterEquipement() {
 			Equipement[] equipementEjecte = new Equipement[nbEquipement];
-			System.out.println("L'�quipement de " + nom.toString() + 
+			System.out.println("L'�quipement de " + nom + 
 				"s'envole sous la force du coup.");
 			int nbEquipementEjecte = 0;
 			for (int i = 0; i < nbEquipement; i++) {
 				if (equipements[i] != null) {
-					equipementEjecte[nbEquipementEjecte] =
-					equipements[i];
+					equipementEjecte[nbEquipementEjecte] = equipements[i];
 					nbEquipementEjecte++;
 					equipements[i] = null;
 				} 

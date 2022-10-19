@@ -1,5 +1,8 @@
 package personnages;
 
+import objets.Equipement;
+import territoires.Musee;
+
 public class Gaulois {
 	
 	private String nom;
@@ -49,13 +52,23 @@ public class Gaulois {
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la m�choire de " + romain.getNom());
 		Equipement[] trophee = romain.recevoirCoup((force / 3) * effetPotion);
-		for (int i = 0; trophee != null && i < trophee.length; i++,
-		nbTrophees++) {
+		for (int i = 0; trophee != null && i < trophee.length; i++) {
 		this.trophees[nbTrophees] = trophee[i];
 		}
 		return;
 	}
 
+	public void faireUneDonnation(Musee musee) {
+		if (nbTrophees>0) {
+			parler("Je donne au musée tous mes trophées:");
+			for (int i=0; i < nbTrophees; i++) {
+				System.out.println("-"+trophees[i]);
+				musee.donnerTrophees(this, trophees[i]);
+			}
+		}else {
+			System.out.println("Aucun trophée !");
+		}
+	}
 	
 	public static void main(String[] args) {
 		System.out.println("BEGIN");
